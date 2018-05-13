@@ -50,6 +50,8 @@ namespace Obshaga.Manage
                 Console.WriteLine("Form - " + item.Form);
                 Console.WriteLine("Average score - " + item.AverageScore);
                 Console.WriteLine("Profit - " + item.Profit);
+                Console.WriteLine("-------------------------------------------");
+                Console.WriteLine("");
             }
         }
 

@@ -15,8 +15,18 @@ namespace Obshaga
     public struct Student
     {
         public static double MinSalery = 24560;
-
-        public string Fio { get; set; }
+        private string Fio_;
+        public string Fio
+        {
+            get
+            {
+                return Fio_;
+            }
+            set
+            {
+                Fio_ = value.Replace("<center><b><font size=7>", "").Replace("</font></b></center>", "").Replace("\n", "");
+            }
+        }
         public int Group { get; set; }
         public double AverageScore { get; set; }
         public double Profit { get; set; }
