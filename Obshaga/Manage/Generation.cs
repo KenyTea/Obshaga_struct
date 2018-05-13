@@ -57,52 +57,38 @@ namespace Obshaga.Manage
             }
         }
 
-        public List<Hostel> hostel;
+        public List<Student> bufer;
 
-        public void AddToHostel(List<Student> students)
+        public void CheckToHostel(List<Student> students)
         {
-            hostel = new List<Hostel>();
-            Hostel hos = new Hostel();
-            double temp = 0;
+            bufer = new List<Student>();
+            students = students.OrderBy(o => o.Profit).ToList();
             foreach (Student item in students)
             {
-                if ((item.Profit / item.Family) < (MinSalary * 2))
+                if (students.Count() < 10)
                 {
-                    hos.Fio = item.Fio;
-                    hos.Form = item.Form;
-                    hos.Group = item.Group;
-                    hos.Family = item.Family;
-                    hos.AverageScore = item.AverageScore;
-                    temp = item.AverageScore;
-
-                    hostel.Add(hos);
-                    break;
-                }
-                else if (temp > item.AverageScore)
-                {
-                    hos.Fio = item.Fio;
-                    hos.Form = item.Form;
-                    hos.Group = item.Group;
-                    hos.Family = item.Family;
-                    temp = item.AverageScore;
-                    hostel.Add(hos);
+                    if ((item.Profit / item.Family) < (MinSalary * 2))
+                    {
+                        bufer.Add(item);
+                        
+                    }
                 }
             }
+
+
+            //students = students.OrderBy(o => o.Profit).ToList();
+
+            //foreach (Student item in students)
+            //{
+            //    if ((item.Profit / item.Family) < (MinSalary * 2))
+            //    {
+            //        PrintStudents(students);
+            //    }
+
+            //}
         }
 
-        public void PrintHostel(List<Hostel> list)
-        {
-            Console.WriteLine("=============================================\n");
-            list = list.OrderBy(o => o.AverageScore).ToList();
-            foreach (Hostel item in list)
-            {
-                Console.WriteLine("Fio - " + item.Fio);
-                Console.WriteLine("Group - " + item.Group);
-                Console.WriteLine("Form of training - " + item.Form);
-                Console.WriteLine("Number of family members - " + item.Family);
-                Console.WriteLine("-------------------------------------------------");
-            }
-        }
+        
     }
 }
 
