@@ -18,7 +18,7 @@ namespace Obshaga
         {
             
 
-            Generatino gen = new Generatino();
+            Generation gen = new Generation();
             gen.GenegateStudent();
            gen.PrintStudents(gen.students);
         }

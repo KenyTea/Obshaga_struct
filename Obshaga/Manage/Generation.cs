@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Obshaga.Manage
 {
-    public class Generatino
+    public class Generation
     {
         public Student student; 
         public List<Student> students;
