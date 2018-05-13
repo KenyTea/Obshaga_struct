@@ -20,7 +20,7 @@ namespace Obshaga
 
             Generatino gen = new Generatino();
             gen.GenegateStudent();
-            gen.PrintStudents(gen.students);
+           gen.PrintStudents(gen.students);
         }
     }
 }

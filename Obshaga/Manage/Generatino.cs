@@ -24,7 +24,7 @@ namespace Obshaga.Manage
                 Student student = new Student();
                 student.Group = rand.Next(1, 3);
                 student.AverageScore = (double)rand.Next(10, 999);
-                student.Profit = (double)rand.Next(55000, 12000);
+                student.Profit = (double)rand.Next(55000, 120000);
                 student.Form = (FormOfTraining)rand.Next(0, 1);
                 student.Sex = (sex)rand.Next(0, 1);
                 student.Family = rand.Next(1, 5);
