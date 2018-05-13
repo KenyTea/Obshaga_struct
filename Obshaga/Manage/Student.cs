@@ -14,7 +14,6 @@ namespace Obshaga
     /*Ф.И.О. студента, группу, средний балл, доход на члена семьи, пол (перечисление), форма обучения(перечисление).*/
     public struct Student
     {
-        public static double MinSalery = 24560;
         private string Fio_;
         public string Fio
         {

@@ -9,7 +9,9 @@ namespace Obshaga.Manage
 {
     public class Generation
     {
-        public Student student; 
+        public double MinSalery = 15860;
+
+        public Student student;
         public List<Student> students;
 
         public void GenegateStudent()
@@ -55,6 +57,53 @@ namespace Obshaga.Manage
             }
         }
 
+        public List<Hostel> hostel;
+
+        public void AddToHostel(List<Student> list)
+        {
+            hostel = new List<Hostel>();
+            Hostel hos = new Hostel();
+            double temp = 0;
+            foreach (Student item in students)
+            {
+                if((item.Profit / item.Family) < (MinSalery * 2))
+                {
+                    hos.Fio = item.Fio;
+                    hos.Form = item.Form;
+                    hos.Group = item.Group;
+                    hos.Family = item.Family;
+                    hos.AverageScore = item.AverageScore;
+                    temp = item.AverageScore;
+                    
+                    hostel.Add(hos);
+                }
+                else if (temp > item.AverageScore)
+                {
+                    hos.Fio = item.Fio;
+                    hos.Form = item.Form;
+                    hos.Group = item.Group;
+                    hos.Family = item.Family;
+                    temp = item.AverageScore;
+                    hostel.Add(hos);
+                }
+            }
+
+        }
+
+        public void PrintHostel(List<Hostel> list)
+        {
+
+            Console.WriteLine("=============================================\n");
+            list = list.OrderBy(o => o.AverageScore).ToList();
+            foreach (Hostel item in list)
+            {
+                Console.WriteLine("Fio - " + item.Fio);
+                Console.WriteLine("Group - " + item.Group);
+                Console.WriteLine("Form of training - " + item.Form);
+                Console.WriteLine("Number of family members - " + item.Family);
+                Console.WriteLine("-------------------------------------------------");
+            }
+        }
     }
 
 

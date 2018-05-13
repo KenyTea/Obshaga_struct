@@ -16,11 +16,13 @@ namespace Obshaga
     {
         static void Main(string[] args)
         {
-            
+
 
             Generation gen = new Generation();
             gen.GenegateStudent();
-           gen.PrintStudents(gen.students);
+            gen.PrintStudents(gen.students);
+            gen.AddToHostel(gen.students);
+            gen.PrintHostel(gen.hostel);
         }
     }
 }
