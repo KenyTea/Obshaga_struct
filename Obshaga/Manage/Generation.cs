@@ -9,7 +9,7 @@ namespace Obshaga.Manage
 {
     public class Generation
     {
-        public double MinSalery = 15860;
+        public double MinSalary = 15860;
 
         public Student student;
         public List<Student> students;
@@ -59,14 +59,14 @@ namespace Obshaga.Manage
 
         public List<Hostel> hostel;
 
-        public void AddToHostel(List<Student> list)
+        public void AddToHostel(List<Student> students)
         {
             hostel = new List<Hostel>();
             Hostel hos = new Hostel();
             double temp = 0;
             foreach (Student item in students)
             {
-                if((item.Profit / item.Family) < (MinSalery * 2))
+                if ((item.Profit / item.Family) < (MinSalary * 2))
                 {
                     hos.Fio = item.Fio;
                     hos.Form = item.Form;
@@ -74,8 +74,9 @@ namespace Obshaga.Manage
                     hos.Family = item.Family;
                     hos.AverageScore = item.AverageScore;
                     temp = item.AverageScore;
-                    
+
                     hostel.Add(hos);
+                    break;
                 }
                 else if (temp > item.AverageScore)
                 {
@@ -87,12 +88,10 @@ namespace Obshaga.Manage
                     hostel.Add(hos);
                 }
             }
-
         }
 
         public void PrintHostel(List<Hostel> list)
         {
-
             Console.WriteLine("=============================================\n");
             list = list.OrderBy(o => o.AverageScore).ToList();
             foreach (Hostel item in list)
@@ -105,7 +104,8 @@ namespace Obshaga.Manage
             }
         }
     }
-
-
 }
+
+
+
 
