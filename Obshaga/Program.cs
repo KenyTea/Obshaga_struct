@@ -10,6 +10,8 @@ namespace Obshaga
     {
         static void Main(string[] args)
         {
+
+
         }
     }
 }
