@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Obshaga.Manage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,11 @@ namespace Obshaga
     {
         static void Main(string[] args)
         {
-            Student stud = new Student();
-            stud.GenegateStudent();
-            stud.PrintStudents(stud.students);
+            
 
+            Generatino gen = new Generatino();
+            gen.GenegateStudent();
+            gen.PrintStudents(gen.students);
         }
     }
 }
