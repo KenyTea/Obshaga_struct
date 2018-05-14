@@ -78,6 +78,8 @@ namespace Obshaga.Manage
             foreach (Student item in students)
             {
                // if (item.Fio != bufer.)   проверка на наличие повторений!!!!
+
+               if (bufer.Count() < 10)
                 {
                     if (item.AverageScore == item.AverageScore)
                     {
