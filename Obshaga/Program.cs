@@ -20,9 +20,11 @@ namespace Obshaga
 
             Generation gen = new Generation();
             gen.GenegateStudent();
-           // gen.PrintStudents(gen.students);
+            gen.PrintStudents(gen.students);
 
             gen.CheckToHostel(gen.students);
+
+            gen.Print(gen.bufer);
            
         }
     }

@@ -52,6 +52,7 @@ namespace Obshaga.Manage
                 Console.WriteLine("Form - " + item.Form);
                 Console.WriteLine("Average score - " + item.AverageScore);
                 Console.WriteLine("Profit - " + item.Profit);
+                Console.WriteLine("Family - " + item.Family);
                 Console.WriteLine("-------------------------------------------");
                 Console.WriteLine("");
             }
@@ -69,6 +70,8 @@ namespace Obshaga.Manage
                 {
                     if ((item.Profit / item.Family) < (MinSalary * 2))
                     {
+                        Console.WriteLine("0000000000000000000000000000000000000000000000");
+                        Console.WriteLine(item.Fio);
                         bufer.Add(item);
                         
                     }
@@ -88,6 +91,18 @@ namespace Obshaga.Manage
             //}
         }
 
+        public void Print(List<Student> bufer)
+        {
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+            foreach (Student item in bufer)
+            {
+                Console.WriteLine("Fio - " + item.Fio);
+                Console.WriteLine("Group - " + item.Group);
+                Console.WriteLine("Profit - " + item.Profit);
+                Console.WriteLine("Number of family members - " + item.Family);
+                Console.WriteLine("");
+            }
+        }
         
     }
 }
