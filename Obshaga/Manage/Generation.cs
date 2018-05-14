@@ -9,7 +9,7 @@ namespace Obshaga.Manage
 {
     public class Generation
     {
-        public double MinSalary = 15860;
+        public double MinSalary = 25860;
 
         public Student student;
         public List<Student> students;
@@ -66,29 +66,26 @@ namespace Obshaga.Manage
             students = students.OrderBy(o => o.Profit).ToList();
             foreach (Student item in students)
             {
-                if (students.Count() < 10)
+                if ((item.Profit / item.Family) < (MinSalary * 2))
                 {
-                    if ((item.Profit / item.Family) < (MinSalary * 2))
-                    {
-                        Console.WriteLine("0000000000000000000000000000000000000000000000");
-                        Console.WriteLine(item.Fio);
-                        bufer.Add(item);
-                        
-                    }
+                    Console.WriteLine("=============Family==============");
+                    bufer.Add(item);
                 }
             }
 
+            students = students.OrderBy(o => o.AverageScore).ToList();
 
-            //students = students.OrderBy(o => o.Profit).ToList();
-
-            //foreach (Student item in students)
-            //{
-            //    if ((item.Profit / item.Family) < (MinSalary * 2))
-            //    {
-            //        PrintStudents(students);
-            //    }
-
-            //}
+            foreach (Student item in students)
+            {
+               // if (item.Fio != bufer.)   проверка на наличие повторений!!!!
+                {
+                    if (item.AverageScore == item.AverageScore)
+                    {
+                        Console.WriteLine("=============Average Score==============");
+                        bufer.Add(item);
+                    }
+                }
+            }
         }
 
         public void Print(List<Student> bufer)
@@ -103,7 +100,7 @@ namespace Obshaga.Manage
                 Console.WriteLine("");
             }
         }
-        
+
     }
 }
 
